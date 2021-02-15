@@ -24,21 +24,11 @@ public class Bootstrap implements CommandLineRunner {
         if (categoryRepository.count().block() == 0) {
             System.out.println(" ### Loading data on Bootstrap ####");
 
-            categoryRepository.save(Category.builder()
-                    .description("Fruits").build()).block();
-
-            categoryRepository.save(Category.builder()
-                    .description("Nuts").build()).block();
-
-            categoryRepository.save(Category.builder()
-                    .description("Breads").build()).block();
-
-            categoryRepository.save(Category.builder()
-                    .description("Meats").build()).block();
-
-            categoryRepository.save(Category.builder()
-                    .description("Eggs").build()).block();
-
+            categoryRepository.save(Category.builder().description("Fruits").build()).block();
+            categoryRepository.save(Category.builder().description("Nuts").build()).block();
+            categoryRepository.save(Category.builder().description("Breads").build()).block();
+            categoryRepository.save(Category.builder().description("Meats").build()).block();
+            categoryRepository.save(Category.builder().description("Eggs").build()).block();
             System.out.println("Loaded Categories: " + categoryRepository.count().block());
 
             vendorRepository.save(Vendor.builder().firstName("Julio").lastName("Chacón").build()).block();
